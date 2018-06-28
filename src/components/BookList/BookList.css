@@ -1,16 +1,4 @@
-td {
-  padding-bottom: 220px;
-  text-align: left;
-}
-.table td a {
-  text-align: left;
-}
-
-.p {
-}
-a {
-}
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 767px) {
   table caption {
     border-bottom: 1px solid #ddd;
     padding: 0;
@@ -19,17 +7,17 @@ a {
 }
 
 .p {
-  text-align: center;
+  /* text-align: center; */
   padding-top: 140px;
   font-size: 14px;
 }
 th {
-  text-align: center;
+  /* text-align: center; */
   padding-top: 140px;
   font-size: 14px;
 }
 td {
-  text-align: center;
+  /* text-align: center; */
   padding-top: 140px;
   font-size: 14px;
 }

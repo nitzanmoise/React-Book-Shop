@@ -19,15 +19,10 @@ class BookDetails extends Component {
   }
 
   fetchBook(id) {
-    // var book = BookService.getBookById(id);
     BookService.getBooks().then(books => {
       var book = books.find(book => book.id === id);
-      console.log("in book details - book:", book);
       this.setState({ book });
-      // return book;
-      console.log(this.state.book, "state book");
     });
-    // console.log("in book deails", book);
   }
 
   render() {

@@ -13,7 +13,6 @@ class FormErrorsComponent extends React.Component {
 
     return (
       <div className="formErrors">
-        <h1>lala</h1>
         {Object.keys(formErrors).map((fieldName, i) => {
           if (formErrors[fieldName].length > 0) {
             return (

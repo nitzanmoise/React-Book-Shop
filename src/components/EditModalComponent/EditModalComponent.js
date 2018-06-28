@@ -237,7 +237,6 @@ class EditModalComponent extends React.Component {
   }
 }
 EditModalComponent.propTypes = {
-  book: PropTypes.object.isRequired,
-  books: PropTypes.array.isRequired
+  book: PropTypes.object.isRequired
 };
 export default EditModalComponent;
