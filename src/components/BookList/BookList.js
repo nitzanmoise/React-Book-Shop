@@ -12,7 +12,7 @@ const BookList = props => {
       <tbody key={book.id} className="books-list-item">
         <tr>
           <td>
-            <EditModalComponent book={book} />
+            <EditModalComponent books={props.books} book={book} />
           </td>
           <td>
             {" "}
@@ -35,10 +35,11 @@ const BookList = props => {
       <table className="table table-bordered table-hover">
         <thead className="thead-dark">
           <tr>
-            <th scope="col">#</th>
+            <th scope="col">Edit</th>
             <th scope="col">Name</th>
             <th scope="col">Author</th>
             <th scope="col">Published Date</th>
+            <th scope="col">Delete</th>
           </tr>
         </thead>
         {booksPreview}

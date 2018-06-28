@@ -23,7 +23,8 @@ class AddModalComponenet extends React.Component {
       authorValid: false,
       formValid: false,
       publishedDateValid: false,
-      formErrors: { Title: "", Author: "", Date: "" }
+      nameMatchValid: false,
+      formErrors: { Title: "", Author: "", Date: "", Name: "" }
     };
   }
 
@@ -48,11 +49,22 @@ class AddModalComponenet extends React.Component {
         fieldValidationErrors.Title = titleValid
           ? ""
           : " is invalid, must be feild!";
+        const matchBook = this.props.books.find(book => {
+          return book.volumeInfo.title === value;
+        });
+        if (matchBook === undefined) {
+          this.setState({ nameMatchValid: true });
+        } else {
+          this.setState({ nameMatchValid: false });
+        }
+        fieldValidationErrors.Name = matchBook
+          ? " cant be match to other books name!"
+          : "";
+
         break;
       case "Author":
         authorValid = /[a-zA-Z]+/.test(value);
 
-        console.log(publishedDateValid, "publish date valid switch cae");
         fieldValidationErrors.Author = authorValid
           ? ""
           : " is invalid, must be feild!";
@@ -217,5 +229,9 @@ class AddModalComponenet extends React.Component {
     );
   }
 }
+
+AddModalComponenet.propTypes = {
+  books: PropTypes.array.isRequired
+};
 
 export default AddModalComponenet;

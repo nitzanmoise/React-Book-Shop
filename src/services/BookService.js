@@ -14,18 +14,19 @@ function getBooks() {
         newBooks.push(apiBook);
       });
       pipedBooks = newBooks.map(book => {
-        const piepedTitle = book.volumeInfo.title.replace(
-          /[a-zA-Z]+/g,
-          function(txt) {
-            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-          }
-        );
-        const piepedAuthor = book.volumeInfo.authors[0].replace(
+        let piepedTitle = book.volumeInfo.title.replace(/[a-zA-Z]+/g, function(
+          txt
+        ) {
+          return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        });
+        piepedTitle = piepedTitle.replace(/[^a-zA-Z" "]+/g, "");
+        let piepedAuthor = book.volumeInfo.authors[0].replace(
           /\w\S*/g,
           function(txt) {
             return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
           }
         );
+        piepedAuthor = piepedAuthor.replace(/[^a-zA-Z" "]+/g, " ");
 
         const bookToReturn = {
           ...book,

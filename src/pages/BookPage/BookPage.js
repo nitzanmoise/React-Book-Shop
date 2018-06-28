@@ -32,7 +32,7 @@ class BookPage extends Component {
           <BookList books={this.state.books} />
         </div>
         <div className="action-container">
-          <AddModalComponent />
+          <AddModalComponent books={this.state.books} />
         </div>
       </div>
     );

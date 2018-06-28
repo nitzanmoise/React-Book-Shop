@@ -24,7 +24,8 @@ class EditModalComponent extends React.Component {
       authorValid: false,
       formValid: false,
       publishedDateValid: false,
-      formErrors: { Title: "", Author: "", Date: "" }
+      nameMatchValid: false,
+      formErrors: { Title: "", Author: "", Date: "", Name: "" }
     };
   }
 
@@ -60,6 +61,18 @@ class EditModalComponent extends React.Component {
         fieldValidationErrors.Title = titleValid
           ? ""
           : " is invalid, must be feild!";
+        const matchBook = this.props.books.find(book => {
+          return book.volumeInfo.title === value;
+        });
+        if (matchBook === undefined) {
+          this.setState({ nameMatchValid: true });
+        } else {
+          this.setState({ nameMatchValid: false });
+        }
+        fieldValidationErrors.Name = matchBook
+          ? " cant be match to other books name!"
+          : "";
+
         break;
       case "Author":
         authorValid = /[a-zA-Z]+/.test(value);
@@ -96,7 +109,8 @@ class EditModalComponent extends React.Component {
     if (
       this.state.titleValid &&
       this.state.authorValid &&
-      this.state.publishedDateValid
+      this.state.publishedDateValid &&
+      this.state.nameMatchValid
     ) {
       this.setState({
         formValid: true
@@ -117,7 +131,7 @@ class EditModalComponent extends React.Component {
       volumeInfo: {
         title: value,
         authors: this.state.book.volumeInfo.authors,
-        publishedDate: this.state.publishedDate
+        publishedDate: this.state.book.volumeInfo.publishedDate
       }
     };
 
@@ -136,7 +150,7 @@ class EditModalComponent extends React.Component {
       volumeInfo: {
         title: this.state.book.volumeInfo.title,
         authors: [event.target.value],
-        publishedDate: this.state.publishedDate
+        publishedDate: this.state.book.volumeInfo.publishedDate
       }
     };
 
@@ -237,6 +251,7 @@ class EditModalComponent extends React.Component {
   }
 }
 EditModalComponent.propTypes = {
-  book: PropTypes.object.isRequired
+  book: PropTypes.object.isRequired,
+  books: PropTypes.array.isRequired
 };
 export default EditModalComponent;
