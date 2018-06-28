@@ -1,0 +1,29 @@
+.book-details {
+  max-width: 300px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 30px auto;
+  height: 400px;
+}
+.Book-details-header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  height: 40px;
+}
+
+.Book-details-header h1 {
+  display: inlin;
+  float: left;
+}
+.Book-details .Book-details-row {
+  margin: 10px 0 0 0;
+}
+.details-footer {
+  display: flex;
+  margin-top: 60%;
+}
+.details-footer button {
+  margin-left: 10px;
+}

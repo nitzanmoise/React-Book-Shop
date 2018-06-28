@@ -1,0 +1,27 @@
+{
+  "name": "misterbit-coin",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "laravel-mix": "^2.1.11",
+    "prop-types": "^15.6.1",
+    "pui-react-overlay-trigger": "^8.3.3",
+    "react": "^16.4.1",
+    "react-bootstrap": "^0.32.1",
+    "react-bootstrap-modal": "^4.1.1",
+    "react-dom": "^16.4.1",
+    "react-modal": "^3.4.5",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.17",
+    "reactstrap": "^6.1.0",
+    "sweetalert": "^2.1.0",
+    "uniqid": "^4.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

@@ -1,0 +1,28 @@
+.Books-page {
+  position: relative;
+  height: 100%;
+}
+
+.Books-page .search-container {
+  height: 40px;
+  padding: 0 10px;
+}
+
+.Books-page .Books-container {
+  max-height: 360px;
+  overflow-x: auto;
+}
+
+.Books-page .action-container {
+  position: absolute;
+  bottom: 7px;
+  right: 10px;
+}
+
+.Books-page .action-container a {
+  padding: 5px 15px;
+  border-radius: 50%;
+  background: #246ee5;
+  color: #fff;
+  font-size: 30px;
+}

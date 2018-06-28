@@ -1,0 +1,22 @@
+.app {
+  padding: 20px;
+  border-radius: 5px;
+  margin: 30px auto;
+}
+
+.app .app-header {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 20px;
+  border-bottom: 1px solid;
+}
+
+.app .app-header .selected {
+  color: cadetblue;
+}
+
+.app .app-content {
+  padding: 20px 0 0 0;
+  height: 400px;
+  overflow-y: auto;
+}
