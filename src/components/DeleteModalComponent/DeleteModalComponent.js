@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 import BookService from "../../services/BookService";
 import deleteImg from "../../../src/assets/trash.png";
+
 import "./DeleteModalComponent.css";
 
 class DeleteModalComponent extends React.Component {
@@ -36,9 +37,6 @@ class DeleteModalComponent extends React.Component {
   render() {
     return (
       <div>
-        {/* <Button bsStyle="danger" bsSize="small" onClick={this.handleShow}>
-          Delete Book
-        </Button> */}
         <img src={deleteImg} alt="" onClick={this.handleShow} />
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>

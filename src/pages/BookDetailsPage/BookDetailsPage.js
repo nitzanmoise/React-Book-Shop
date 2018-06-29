@@ -31,7 +31,7 @@ class BookDetails extends Component {
     return (
       <div className="book-details">
         <header className="book-details-header">
-          <h2>Book details</h2>
+          <h2>Book Details</h2>
         </header>
         <div className="book-details-body">
           <div className="book-details-row">Title: {book.volumeInfo.title}</div>
@@ -43,11 +43,11 @@ class BookDetails extends Component {
           </div>
         </div>
         <div className="details-footer">
-          <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-            <Link to={`/books`} className="back">
+          <Link to={`/books`} className="back">
+            <Button bsStyle="primary" bsSize="large">
               Back to book list
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         </div>
       </div>
     );

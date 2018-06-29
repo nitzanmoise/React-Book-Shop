@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-import BookList from "../../components/BookList/BookList";
 import BookService from "../../services/BookService";
+
+import BookList from "../../components/BookList/BookList";
 import AddModalComponent from "../../components/AddModalComponent/AddModalComponent";
-import "./BookPage.css";
 
 class BookPage extends Component {
   state = {
@@ -20,10 +20,6 @@ class BookPage extends Component {
       this.setState({ books });
     });
   }
-
-  bookSearch = term => {
-    BookService.getBooks({ term }).then(books => this.setState({ books }));
-  };
 
   render() {
     return (

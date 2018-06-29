@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
+
 import EditModalComponent from "../EditModalComponent/EditModalComponent";
 import DeleteModalComponent from "../DeleteModalComponent/DeleteModalComponent";
 
@@ -9,7 +10,7 @@ import "./BookList.css";
 const BookList = props => {
   const booksPreview = props.books.map((book, i) => {
     return (
-      <tbody key={book.id} className="books-list-item">
+      <tbody key={i} className="books-list-item">
         <tr>
           <td>
             <EditModalComponent books={props.books} book={book} />

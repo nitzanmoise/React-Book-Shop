@@ -52,7 +52,7 @@ class AddModalComponenet extends React.Component {
         const matchBook = this.props.books.find(book => {
           return book.volumeInfo.title === value;
         });
-        if (matchBook === undefined) {
+        if (!matchBook) {
           this.setState({ nameMatchValid: true });
         } else {
           this.setState({ nameMatchValid: false });
@@ -96,11 +96,10 @@ class AddModalComponenet extends React.Component {
     if (
       this.state.titleValid &&
       this.state.authorValid &&
-      this.state.publishedDateValid
+      this.state.publishedDateValid &&
+      this.state.nameMatchValid
     ) {
-      this.setState({
-        formValid: true
-      });
+      this.setState({ formValid: true });
     } else {
       this.setState({ formValid: false });
     }

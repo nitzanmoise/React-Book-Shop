@@ -83,7 +83,7 @@ function saveBook(book) {
 }
 
 function getEmptyBook() {
-  return { volumeInfo: { title: "", authors: [] } };
+  return { volumeInfo: { title: "", authors: [], publishedDate: "" } };
 }
 
 export default {

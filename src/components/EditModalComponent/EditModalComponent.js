@@ -64,7 +64,7 @@ class EditModalComponent extends React.Component {
         const matchBook = this.props.books.find(book => {
           return book.volumeInfo.title === value;
         });
-        if (matchBook === undefined) {
+        if (!matchBook) {
           this.setState({ nameMatchValid: true });
         } else {
           this.setState({ nameMatchValid: false });
@@ -77,7 +77,6 @@ class EditModalComponent extends React.Component {
       case "Author":
         authorValid = /[a-zA-Z]+/.test(value);
 
-        console.log(publishedDateValid, "publish date valid switch cae");
         fieldValidationErrors.Author = authorValid
           ? ""
           : " is invalid, must be feild!";
